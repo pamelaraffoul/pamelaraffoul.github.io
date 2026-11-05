@@ -147,42 +147,54 @@ button {
 /* 4. Shared components
    ========================================================================== */
 
-/* Small uppercase label above each section title, followed by a divider line */
+/* Small label above each section title: an icon badge followed by soft text */
 .tag {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.tag__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: var(--color-card);
+  color: var(--color-teal);
+}
+
+.tag__icon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Label in the hero: uppercase, without an icon */
+.tag--plain {
+  display: block;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-violet);
-}
-
-.tag::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--color-border);
-}
-
-/* Label without a divider (used in the hero) */
-.tag--plain {
-  display: block;
   color: var(--color-teal);
 }
 
-.tag--plain::after {
-  display: none;
+/* Centered sections */
+.contact .tag {
+  justify-content: center;
 }
 
-/* Centered sections get a line on both sides */
-.contact .tag::before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--color-border);
-}
 
 /* Gradient-filled text */
 .text-gradient {
