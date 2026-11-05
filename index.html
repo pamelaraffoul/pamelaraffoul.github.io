@@ -1,397 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pamela Raffoul | Developer & Business Analyst</title>
-<meta name="description" content="Portfolio of Pamela, Salesforce Consultant specialised in development, integrations and business analysis.">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#121417; --bg2:#181b20; --card:#1e2228; --line:#2b313a;
-    --text:#e8ebef; --muted:#9aa3ad;
-    --teal:#2dd4bf; --violet:#a78bfa; --grad:linear-gradient(135deg,#2dd4bf,#a78bfa);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-  section{padding:90px 0}
-  .tag{font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:.85rem;letter-spacing:.05em}
-  h2{font-size:clamp(1.7rem,4vw,2.3rem);margin:6px 0 34px}
-  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,20,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:flex-end;height:64px}
-  .logo{font-weight:800;font-size:1.2rem}
-  .links{display:flex;gap:28px;font-size:.95rem;color:var(--muted)}
-  .links a:hover{color:var(--teal)}
-  .burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+  <title>Pamela Raffoul | Salesforce Consultant, Developer &amp; Business Analyst</title>
+  <meta name="description" content="Portfolio of Pamela Raffoul, Techno-Functional Salesforce Consultant with nearly 3 years of experience in development, integrations and business analysis.">
+  <meta name="author" content="Pamela Raffoul">
+  <meta name="theme-color" content="#121417">
+  <link rel="canonical" href="https://pamelaraffoul.github.io/">
 
-  /* HERO */
-  .hero{min-height:100vh;display:flex;align-items:center;padding-top:64px;position:relative}
-  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(167,139,250,.15),transparent 45%),radial-gradient(circle at 15% 75%,rgba(45,212,191,.12),transparent 45%);pointer-events:none}
-  .hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative}
-  .hero h1{font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.1;margin:10px 0 16px}
-  .hero p.lead{color:var(--muted);font-size:1.1rem;max-width:540px;margin-bottom:28px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
-  .chip{border:1px solid var(--line);background:var(--bg2);padding:6px 12px;border-radius:999px;font-size:.82rem;color:var(--muted)}
-  .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:12px 22px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.2s}
-  .btn.primary{background:var(--grad);color:#121417}
-  .btn.ghost{border:1px solid var(--line)}
-  .btn:hover{transform:translateY(-2px)}
-  .avatar-box{display:flex;justify-content:center}
-  .avatar{width:min(320px,75vw);aspect-ratio:1;border-radius:50%;background:var(--card);border:2px solid var(--line);box-shadow:0 0 0 10px rgba(45,212,191,.06),0 0 60px rgba(167,139,250,.25);display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .avatar svg,.avatar img{width:100%;height:100%}
-  .float{animation:bob 4s ease-in-out infinite}
+  <!-- Link preview (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pamelaraffoul.github.io/">
+  <meta property="og:title" content="Pamela Raffoul | Salesforce Consultant">
+  <meta property="og:description" content="Developer and business analyst building and integrating CRM solutions on Salesforce.">
+  <meta property="og:image" content="https://pamelaraffoul.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
-  /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
-  .about-grid p{color:var(--muted);margin-bottom:14px}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .stat b{font-size:1.8rem;display:block}
-  .stat span{color:var(--muted);font-size:.85rem}
-  .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .edu .job::before{display:none}
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  /* EXPERIENCE */
-  .timeline{border-left:2px solid var(--line);padding-left:28px;display:grid;gap:30px}
-  .job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
-  .job::before{content:"";position:absolute;left:-37px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--grad);border:3px solid var(--bg)}
-  .job h3{font-size:1.2rem}
-  .meta{color:var(--teal);font-size:.88rem;margin:4px 0 14px;font-family:'JetBrains Mono',monospace}
-  .job ul{padding-left:18px;color:var(--muted)}
-  .job li{margin-bottom:6px}
-  .job li b{color:var(--text);font-weight:600}
-  .job h4{margin:16px 0 6px;font-size:.98rem;color:var(--violet)}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
 
-  /* SKILLS */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .skill{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.2s}
-  .skill:hover{border-color:var(--teal)}
-  .skill .ico{font-size:1.6rem}
-  .skill h3{margin:10px 0 12px;font-size:1.05rem}
-  .skill .chips{margin:0}
-
-  /* PROJECTS */
-  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-  .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:.2s}
-  .proj:hover{transform:translateY(-4px);border-color:var(--violet)}
-  .proj .ind{font-size:.8rem;color:var(--violet);font-family:'JetBrains Mono',monospace}
-  .proj h3{margin:8px 0 10px;font-size:1.1rem}
-  .proj p{color:var(--muted);font-size:.93rem;flex:1}
-  .proj .chips{margin:16px 0 0}
-
-  /* CONTACT */
-  .contact{text-align:center}
-  .contact p{color:var(--muted);max-width:520px;margin:0 auto 28px}
-  .contact .btns{justify-content:center}
-  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0;border-top:1px solid var(--line)}
-
-  /* BOT */
-  .bot-btn{position:fixed;right:20px;bottom:20px;z-index:60;width:66px;height:66px;border-radius:50%;border:0;cursor:pointer;background:var(--card);box-shadow:0 6px 24px rgba(0,0,0,.5),0 0 0 3px rgba(45,212,191,.4);animation:bob 3s ease-in-out infinite;padding:6px}
-  .bot-btn svg{width:100%;height:100%}
-  .bot-hint{position:fixed;right:96px;bottom:36px;z-index:60;background:var(--text);color:var(--bg);padding:8px 14px;border-radius:12px;font-size:.85rem;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.4)}
-  @keyframes bob{50%{transform:translateY(-6px)}}
-  .chat{position:fixed;right:20px;bottom:100px;z-index:61;width:350px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 130px);background:var(--bg2);border:1px solid var(--line);border-radius:18px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.6)}
-  .chat.open{display:flex}
-  .chat-head{background:var(--grad);color:#121417;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
-  .chat-head .mini{width:34px;height:34px;background:#121417;border-radius:50%;padding:3px}
-  .chat-head small{display:block;font-weight:500;font-size:.75rem}
-  .chat-head button{margin-left:auto;background:none;border:0;font-size:1.3rem;cursor:pointer;color:#121417}
-  .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-  .msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.9rem;white-space:pre-line}
-  .msg.bot{background:var(--card);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
-  .msg.me{background:var(--teal);color:#121417;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
-  .quick{padding:12px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
-  .quick button{background:var(--card);border:1px solid var(--line);color:var(--text);padding:7px 12px;border-radius:999px;font-size:.8rem;cursor:pointer;font-family:inherit}
-  .quick button:hover{border-color:var(--teal);color:var(--teal)}
-
-  /* BACK TO TOP */
-  .top-btn{position:fixed;left:20px;bottom:20px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--teal);font-size:1.3rem;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.45);opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s}
-  .top-btn.show{opacity:1;pointer-events:auto;transform:none}
-  .top-btn:hover{border-color:var(--teal)}
-
-  /* REVEAL */
-  .reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
-  .reveal.show{opacity:1;transform:none}
-
-  /* MOBILE */
-  @media (max-width:820px){
-    .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg2);padding:20px;gap:16px;border-bottom:1px solid var(--line)}
-    .links.open{display:flex}
-    .burger{display:block}
-    .hero .wrap,.about-grid{grid-template-columns:1fr}
-    .avatar-box{order:-1}
-    .avatar{width:220px}
-    .hero{text-align:center}
-    .hero p.lead{margin-left:auto;margin-right:auto}
-    .chips,.btns{justify-content:center}
-    section{padding:70px 0}
-    .timeline{padding-left:20px}
-    .job::before{left:-29px}
-    .bot-hint{display:none}
-  }
-</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="wrap">
-    <div class="links" id="links">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
-    </div>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
-  </div>
-</nav>
+  <!-- ===================== Navigation ===================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">☰</button>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="wrap">
-    <div>
-      <div class="tag">// Hello, I'm</div>
-      <h1>Pamela <span class="grad">Raffoul</span></h1>
-      <p class="lead">Techno-Functional Salesforce Consultant &amp; Computer Scientist. I design, build and integrate CRM solutions, and I translate business needs into clear technical solutions.</p>
-      <div class="chips">
-        <span class="chip">Salesforce Development</span><span class="chip">Integrations (REST/SOAP)</span><span class="chip">Business Analysis</span><span class="chip">Data &amp; SQL</span>
+  <main id="main">
+
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__inner container">
+        <div>
+          <p class="tag">// Hello, I'm</p>
+          <h1 class="hero__title">Pamela <span class="text-gradient">Raffoul</span></h1>
+          <p class="hero__lead">
+            Techno-Functional Salesforce Consultant &amp; Computer Scientist. I design, build and integrate
+            CRM solutions, and I translate business needs into clear technical solutions.
+          </p>
+
+          <ul class="chips" aria-label="Areas of expertise">
+            <li class="chip">Salesforce Development</li>
+            <li class="chip">Integrations (REST/SOAP)</li>
+            <li class="chip">Business Analysis</li>
+            <li class="chip">Data &amp; SQL</li>
+          </ul>
+
+          <div class="buttons">
+            <a class="btn btn--primary" href="#contact">Get in touch</a>
+            <a class="btn btn--ghost" href="Pamela-Raffoul-CV.pdf" download>📄 Download CV</a>
+            <a class="btn btn--ghost" href="#projects">See my work</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="avatar">
+            <!-- Illustration: girl working at her laptop -->
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatar-title">
+              <title id="avatar-title">Illustration of Pamela working at her laptop</title>
+              <rect width="240" height="240" fill="#1e2228"/>
+
+              <!-- Hair (back) -->
+              <path d="M84 70c0-26 16-40 36-40s36 14 36 40v66H84z" fill="#3a2a22"/>
+
+              <!-- Neck and body -->
+              <rect x="112" y="98" width="16" height="16" rx="4" fill="#f3c9a8"/>
+              <path d="M84 150c0-24 16-38 36-38s36 14 36 38z" fill="#2b313a"/>
+
+              <!-- Face -->
+              <ellipse cx="120" cy="76" rx="24" ry="27" fill="#f3c9a8"/>
+              <path d="M96 72c4-18 14-26 26-26s22 8 24 24c-10-2-20-8-26-16-4 9-14 15-24 18z" fill="#3a2a22"/>
+              <circle cx="111" cy="78" r="3" fill="#2a1d17"/>
+              <circle cx="129" cy="78" r="3" fill="#2a1d17"/>
+              <circle cx="104" cy="87" r="4" fill="#f4a3a3" opacity=".6"/>
+              <circle cx="136" cy="87" r="4" fill="#f4a3a3" opacity=".6"/>
+              <path d="M113 89q7 6 14 0" stroke="#2a1d17" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+              <!-- Laptop -->
+              <rect x="82" y="128" width="76" height="50" rx="6" fill="#3b4250" stroke="#4a5262"/>
+              <text x="120" y="160" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" font-weight="700" fill="#2dd4bf">&lt;/&gt;</text>
+
+              <!-- Hands -->
+              <circle cx="80" cy="166" r="8" fill="#f3c9a8"/>
+              <circle cx="160" cy="166" r="8" fill="#f3c9a8"/>
+
+              <!-- Desk, plant and mug -->
+              <rect x="46" y="178" width="148" height="8" rx="4" fill="#2b313a"/>
+              <rect x="52" y="158" width="14" height="20" rx="3" fill="#2b313a"/>
+              <path d="M59 158c-8-6-8-16-2-20 4 6 4 14 2 20z" fill="#2dd4bf"/>
+              <path d="M59 158c8-6 10-16 4-20-4 6-6 14-4 20z" fill="#2dd4bf" opacity=".8"/>
+              <rect x="174" y="162" width="14" height="16" rx="3" fill="#a78bfa"/>
+              <path d="M188 166h3a4 4 0 0 1 0 8h-3" stroke="#a78bfa" stroke-width="2.5" fill="none"/>
+
+              <!-- Floating code window -->
+              <g transform="translate(-14 22)">
+                <g class="avatar__code-window">
+                  <rect x="158" y="20" width="66" height="44" rx="6" fill="#121417" stroke="#2b313a"/>
+                  <circle cx="166" cy="28" r="2" fill="#4a5262"/>
+                  <circle cx="172" cy="28" r="2" fill="#4a5262"/>
+                  <circle cx="178" cy="28" r="2" fill="#4a5262"/>
+                  <rect x="166" y="36" width="28" height="3.5" rx="2" fill="#2dd4bf"/>
+                  <rect x="172" y="44" width="42" height="3.5" rx="2" fill="#a78bfa"/>
+                  <rect x="172" y="51" width="26" height="3.5" rx="2" fill="#4a5262"/>
+                  <rect x="166" y="58" width="18" height="3.5" rx="2" fill="#2dd4bf"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div class="btns">
-        <a href="#contact" class="btn primary">Get in touch</a>
-        <a href="cv.pdf" download="Pamela-Raffoul-CV.pdf" class="btn ghost">📄 Download CV</a>
-        <a href="#projects" class="btn ghost">See my work</a>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container reveal">
+        <p class="tag">// about me</p>
+        <h2 class="section__title" id="about-title">A developer who speaks <span class="text-gradient">business</span></h2>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p>
+              I'm a computer scientist (BSc, Lebanese University) and a Techno-Functional Salesforce Consultant at
+              EI-Technologies MENA, with nearly 3 years of experience delivering Sales, Service and Experience Cloud
+              solutions across multiple client projects.
+            </p>
+            <p>
+              I combine hands-on development in Apex, Lightning Web Components and REST/SOAP integrations with
+              business analysis, from requirements workshops to UAT. I was promoted to Confirmed Consultant after
+              two years.
+            </p>
+            <p>
+              I adapt quickly to new systems and roles, and enjoy solving complex problems in collaborative teams,
+              whether in Salesforce, software development, data engineering or CRM consulting.
+            </p>
+          </div>
+
+          <ul class="stats">
+            <li class="stat"><span class="stat__value text-gradient">~3</span><span class="stat__label">years of experience</span></li>
+            <li class="stat"><span class="stat__value text-gradient">AR·EN·FR</span><span class="stat__label">Trilingual</span></li>
+            <li class="stat"><span class="stat__value text-gradient">Dev</span><span class="stat__label">LWC, Apex, APIs</span></li>
+            <li class="stat"><span class="stat__value text-gradient">BA</span><span class="stat__label">Workshops, Jira, UAT</span></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="avatar-box">
-      <div class="avatar">
-        <!-- Illustration: girl at laptop. To use your Bitmoji instead, replace this svg with <img src="avatar.png" alt="Pamela"> -->
-        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-          <rect width="240" height="240" fill="#1e2228"/>
-          <!-- hair back -->
-          <path d="M84 70c0-26 16-40 36-40s36 14 36 40v66H84z" fill="#3a2a22"/>
-          <!-- neck & body -->
-          <rect x="112" y="98" width="16" height="16" rx="4" fill="#f3c9a8"/>
-          <path d="M84 150c0-24 16-38 36-38s36 14 36 38z" fill="#2b313a"/>
-          <!-- face -->
-          <ellipse cx="120" cy="76" rx="24" ry="27" fill="#f3c9a8"/>
-          <path d="M96 72c4-18 14-26 26-26s22 8 24 24c-10-2-20-8-26-16-4 9-14 15-24 18z" fill="#3a2a22"/>
-          <circle cx="111" cy="78" r="3" fill="#2a1d17"/><circle cx="129" cy="78" r="3" fill="#2a1d17"/>
-          <circle cx="104" cy="87" r="4" fill="#f4a3a3" opacity=".6"/><circle cx="136" cy="87" r="4" fill="#f4a3a3" opacity=".6"/>
-          <path d="M113 89q7 6 14 0" stroke="#2a1d17" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <!-- laptop -->
-          <rect x="82" y="128" width="76" height="50" rx="6" fill="#3b4250" stroke="#4a5262"/>
-          <text x="120" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="15" font-weight="700" fill="#2dd4bf">&lt;/&gt;</text>
-          <!-- hands -->
-          <circle cx="80" cy="166" r="8" fill="#f3c9a8"/><circle cx="160" cy="166" r="8" fill="#f3c9a8"/>
-          <!-- desk -->
-          <rect x="46" y="178" width="148" height="8" rx="4" fill="#2b313a"/>
-          <!-- plant -->
-          <rect x="52" y="158" width="14" height="20" rx="3" fill="#2b313a"/>
-          <path d="M59 158c-8-6-8-16-2-20 4 6 4 14 2 20z" fill="#2dd4bf"/><path d="M59 158c8-6 10-16 4-20-4 6-6 14-4 20z" fill="#2dd4bf" opacity=".8"/>
-          <!-- mug -->
-          <rect x="174" y="162" width="14" height="16" rx="3" fill="#a78bfa"/><path d="M188 166h3a4 4 0 0 1 0 8h-3" stroke="#a78bfa" stroke-width="2.5" fill="none"/>
-          <!-- floating code window -->
-          <g class="float" transform="translate(-14,22)">
-            <rect x="158" y="20" width="66" height="44" rx="6" fill="#121417" stroke="#2b313a"/>
-            <circle cx="166" cy="28" r="2" fill="#4a5262"/><circle cx="172" cy="28" r="2" fill="#4a5262"/><circle cx="178" cy="28" r="2" fill="#4a5262"/>
-            <rect x="166" y="36" width="28" height="3.5" rx="2" fill="#2dd4bf"/>
-            <rect x="172" y="44" width="42" height="3.5" rx="2" fill="#a78bfa"/>
-            <rect x="172" y="51" width="26" height="3.5" rx="2" fill="#4a5262"/>
-            <rect x="166" y="58" width="18" height="3.5" rx="2" fill="#2dd4bf"/>
-          </g>
-        </svg>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section class="section section--alt" id="experience" aria-labelledby="experience-title">
+      <div class="container reveal">
+        <p class="tag">// experience</p>
+        <h2 class="section__title" id="experience-title">Where I've <span class="text-gradient">grown</span></h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <article class="card">
+              <h3 class="card__title">Confirmed Salesforce Consultant</h3>
+              <p class="card__meta">EI-Technologies MENA · Awkar, Lebanon · <time datetime="2026-01">Jan 2026</time> – Present</p>
+              <ul class="job__tasks">
+                <li><strong>Techno-Functional Consulting:</strong> Gathered requirements directly from stakeholders and business users, translated them into technical solutions, and implemented them end to end on the Salesforce platform.</li>
+                <li><strong>Delivery &amp; UAT Support:</strong> Documented each solution, delivered demos to stakeholders, supported end users during User Acceptance Testing, and provided go-live support.</li>
+                <li><strong>Integration Business Analysis:</strong> Run workshops with stakeholders to gather business requirements and translate them into Jira tickets for the development team.</li>
+                <li><strong>Integration Flow Analysis:</strong> Analyze and document integration flows between Salesforce and external systems.</li>
+                <li><strong>UAT Validation:</strong> Validate delivered features against business requirements during UAT and follow up on issues with the team.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline__item">
+            <article class="card">
+              <h3 class="card__title">Junior Salesforce Consultant</h3>
+              <p class="card__meta">EI-Technologies MENA · Awkar, Lebanon · <time datetime="2024-01">Jan 2024</time> – <time datetime="2025-12">Dec 2025</time></p>
+              <ul class="job__tasks">
+                <li><strong>Custom Development:</strong> Developed Lightning Web Components and Apex classes, triggers, and batch jobs to extend standard platform functionality.</li>
+                <li><strong>Integrations:</strong> Developed Apex REST and SOAP integrations between Salesforce and external systems.</li>
+                <li><strong>Experience Cloud Sites:</strong> Built reusable LWC components for two Experience Cloud sites, reducing duplicated components across pages.</li>
+                <li><strong>Platform Configuration:</strong> Configured Flows, Assignment and Escalation Rules, Email-to-Case, profiles, roles, permission sets, reports, and dashboards across Sales and Service Cloud.</li>
+                <li><strong>Testing &amp; Deployment:</strong> Wrote Apex test classes and performed functional validation before production deployments.</li>
+                <li><strong>Microsoft Power Platform:</strong> Built SharePoint, Power Apps, and Power Automate solutions on first client project.</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap reveal">
-    <div class="tag">// about me</div>
-    <h2>A developer who speaks <span class="grad">business</span></h2>
-    <div class="about-grid">
-      <div>
-        <p>I'm a computer scientist (BSc, Lebanese University) and a Techno-Functional Salesforce Consultant at EI-Technologies MENA, with nearly 3 years of experience delivering Sales, Service and Experience Cloud solutions across multiple client projects.</p>
-        <p>I combine hands-on development in Apex, Lightning Web Components and REST/SOAP integrations with business analysis, from requirements workshops to UAT. I was promoted to Confirmed Consultant after two years.</p>
-        <p>I adapt quickly to new systems and roles, and enjoy solving complex problems in collaborative teams, whether in Salesforce, software development, data engineering or CRM consulting.</p>
+    <!-- ===================== Skills ===================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container reveal">
+        <p class="tag">// skills</p>
+        <h2 class="section__title" id="skills-title">My <span class="text-gradient">toolbox</span></h2>
+
+        <div class="skills">
+          <article class="card skill">
+            <span class="skill__icon" aria-hidden="true">☁️</span>
+            <h3 class="skill__title">Salesforce</h3>
+            <ul class="chips">
+              <li class="chip">Sales Cloud</li>
+              <li class="chip">Service Cloud</li>
+              <li class="chip">Experience Cloud</li>
+              <li class="chip">Apex</li>
+              <li class="chip">LWC</li>
+              <li class="chip">Flows</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <span class="skill__icon" aria-hidden="true">🔗</span>
+            <h3 class="skill__title">Integration</h3>
+            <ul class="chips">
+              <li class="chip">REST APIs</li>
+              <li class="chip">SOAP APIs</li>
+              <li class="chip">Integration flow analysis</li>
+              <li class="chip">Data Loader</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <span class="skill__icon" aria-hidden="true">💻</span>
+            <h3 class="skill__title">Development &amp; Data</h3>
+            <ul class="chips">
+              <li class="chip">Apex</li>
+              <li class="chip">Java</li>
+              <li class="chip">C</li>
+              <li class="chip">JavaScript</li>
+              <li class="chip">HTML5</li>
+              <li class="chip">CSS3</li>
+              <li class="chip">SQL</li>
+              <li class="chip">SOQL</li>
+              <li class="chip">VS Code</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <span class="skill__icon" aria-hidden="true">🧭</span>
+            <h3 class="skill__title">Business Analysis</h3>
+            <ul class="chips">
+              <li class="chip">Requirements workshops</li>
+              <li class="chip">Jira</li>
+              <li class="chip">UAT</li>
+              <li class="chip">Documentation</li>
+              <li class="chip">Demos</li>
+              <li class="chip">Go-live support</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <span class="skill__icon" aria-hidden="true">⚙️</span>
+            <h3 class="skill__title">Microsoft Power Platform</h3>
+            <ul class="chips">
+              <li class="chip">SharePoint</li>
+              <li class="chip">Power Apps</li>
+              <li class="chip">Power Automate</li>
+            </ul>
+          </article>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat"><b class="grad">~3</b><span>years of experience</span></div>
-        <div class="stat"><b class="grad">AR·EN·FR</b><span>Trilingual</span></div>
-        <div class="stat"><b class="grad">Dev</b><span>LWC, Apex, APIs</span></div>
-        <div class="stat"><b class="grad">BA</b><span>Workshops, Jira, UAT</span></div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="section section--alt" id="projects" aria-labelledby="projects-title">
+      <div class="container reveal">
+        <p class="tag">// projects</p>
+        <h2 class="section__title" id="projects-title">Selected <span class="text-gradient">work</span></h2>
+
+        <div class="projects">
+          <article class="card project">
+            <p class="project__category">Salesforce · Experience Cloud</p>
+            <h3 class="project__title">Experience Cloud Sites</h3>
+            <p class="project__text">Built reusable Lightning Web Components for two Experience Cloud sites, reducing duplicated components across pages.</p>
+            <ul class="chips">
+              <li class="chip">LWC</li>
+              <li class="chip">Apex</li>
+              <li class="chip">Experience Cloud</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <p class="project__category">Integration · Development</p>
+            <h3 class="project__title">REST &amp; SOAP Integrations</h3>
+            <p class="project__text">Developed Apex REST and SOAP integrations between Salesforce and external systems.</p>
+            <ul class="chips">
+              <li class="chip">Apex</li>
+              <li class="chip">REST</li>
+              <li class="chip">SOAP</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <p class="project__category">Integration · Business Analysis</p>
+            <h3 class="project__title">Integration Business Analysis</h3>
+            <p class="project__text">Ran stakeholder workshops, turned business requirements into Jira tickets, analyzed and documented integration flows, and validated deliveries during UAT.</p>
+            <ul class="chips">
+              <li class="chip">Workshops</li>
+              <li class="chip">Jira</li>
+              <li class="chip">UAT</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <p class="project__category">Salesforce · Techno-functional</p>
+            <h3 class="project__title">End-to-End Solution Delivery</h3>
+            <p class="project__text">Gathered requirements from stakeholders and business users, implemented the solutions on Salesforce, delivered demos and documentation, and supported users through UAT and go-live.</p>
+            <ul class="chips">
+              <li class="chip">Requirements</li>
+              <li class="chip">Demos</li>
+              <li class="chip">Go-live</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <p class="project__category">Sales &amp; Service Cloud · Configuration</p>
+            <h3 class="project__title">Platform Configuration</h3>
+            <p class="project__text">Configured Flows, Assignment and Escalation Rules, Email-to-Case, security (profiles, roles, permission sets), reports and dashboards.</p>
+            <ul class="chips">
+              <li class="chip">Flows</li>
+              <li class="chip">Email-to-Case</li>
+              <li class="chip">Security</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <p class="project__category">Microsoft · Power Platform</p>
+            <h3 class="project__title">Power Platform Solutions</h3>
+            <p class="project__text">Built SharePoint, Power Apps and Power Automate solutions on my first client project.</p>
+            <ul class="chips">
+              <li class="chip">SharePoint</li>
+              <li class="chip">Power Apps</li>
+              <li class="chip">Power Automate</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" style="background:var(--bg2)">
-  <div class="wrap reveal">
-    <div class="tag">// experience</div>
-    <h2>Where I've <span class="grad">grown</span></h2>
-    <div class="timeline">
-      <div class="job">
-        <h3>Confirmed Salesforce Consultant</h3>
-        <div class="meta">EI-Technologies MENA · Awkar, Lebanon · Jan 2026 – Present</div>
-        <ul>
-          <li><b>Techno-Functional Consulting:</b> Gathered requirements directly from stakeholders and business users, translated them into technical solutions, and implemented them end to end on the Salesforce platform.</li>
-          <li><b>Delivery &amp; UAT Support:</b> Documented each solution, delivered demos to stakeholders, supported end users during User Acceptance Testing, and provided go-live support.</li>
-          <li><b>Integration Business Analysis:</b> Run workshops with stakeholders to gather business requirements and translate them into Jira tickets for the development team.</li>
-          <li><b>Integration Flow Analysis:</b> Analyze and document integration flows between Salesforce and external systems.</li>
-          <li><b>UAT Validation:</b> Validate delivered features against business requirements during UAT and follow up on issues with the team.</li>
-        </ul>
+    <!-- ===================== Education ===================== -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container reveal">
+        <p class="tag">// education</p>
+        <h2 class="section__title" id="education-title">Education &amp; <span class="text-gradient">certification</span></h2>
+
+        <div class="education">
+          <article class="card">
+            <h3 class="card__title">Bachelor's Degree, Computer Science</h3>
+            <p class="card__meta"><time datetime="2020-10">Oct 2020</time> – <time datetime="2023-10">Oct 2023</time></p>
+            <p class="card__text">Lebanese University, Faculty of Sciences</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Salesforce Certified Administrator</h3>
+            <p class="card__meta"><time datetime="2024">2024</time></p>
+            <p class="card__text">Salesforce</p>
+          </article>
+        </div>
       </div>
-      <div class="job">
-        <h3>Junior Salesforce Consultant</h3>
-        <div class="meta">EI-Technologies MENA · Awkar, Lebanon · Jan 2024 – Dec 2025</div>
-        <ul>
-          <li><b>Custom Development:</b> Developed Lightning Web Components and Apex classes, triggers, and batch jobs to extend standard platform functionality.</li>
-          <li><b>Integrations:</b> Developed Apex REST and SOAP integrations between Salesforce and external systems.</li>
-          <li><b>Experience Cloud Sites:</b> Built reusable LWC components for two Experience Cloud sites, reducing duplicated components across pages.</li>
-          <li><b>Platform Configuration:</b> Configured Flows, Assignment and Escalation Rules, Email-to-Case, profiles, roles, permission sets, reports, and dashboards across Sales and Service Cloud.</li>
-          <li><b>Testing &amp; Deployment:</b> Wrote Apex test classes and performed functional validation before production deployments.</li>
-          <li><b>Microsoft Power Platform:</b> Built SharePoint, Power Apps, and Power Automate solutions on first client project.</li>
-        </ul>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section section--alt contact" id="contact" aria-labelledby="contact-title">
+      <div class="container reveal">
+        <p class="tag">// contact</p>
+        <h2 class="section__title" id="contact-title">Let's <span class="text-gradient">work together</span></h2>
+        <p class="contact__text">
+          Open to roles in software development, data engineering, business analysis and CRM/IT consulting.
+          Based in Dbayeh, Lebanon.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn--primary" href="mailto:pamelaraffoul1@gmail.com">✉️ pamelaraffoul1@gmail.com</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/pamela-raffoul2002" target="_blank" rel="noopener noreferrer">
+            in LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="current-year">2026</span> Pamela Raffoul · Built with ☕ in Lebanon</p>
+  </footer>
+
+  <!-- ===================== Back to top ===================== -->
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <!-- ===================== Chatbot (Pixel) ===================== -->
+  <div class="chatbot">
+    <p class="chatbot__hint" aria-hidden="true">Hi! Ask me about Pamela 👋</p>
+
+    <button class="chatbot__launcher" type="button" aria-label="Chat with Pixel, Pamela's assistant" aria-controls="chatbot-panel" aria-expanded="false">
+      <!-- Pixel the robot (reused in the chat header by script.js) -->
+      <svg class="chatbot__robot" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="50" y1="10" x2="50" y2="24" stroke="#a78bfa" stroke-width="4"/>
+        <circle cx="50" cy="10" r="6" fill="#2dd4bf"/>
+        <rect x="18" y="24" width="64" height="54" rx="20" fill="#e8ebef"/>
+        <rect x="26" y="34" width="48" height="30" rx="12" fill="#121417"/>
+        <circle cx="40" cy="48" r="6" fill="#2dd4bf"/>
+        <circle cx="60" cy="48" r="6" fill="#2dd4bf"/>
+        <path d="M42 57q8 6 16 0" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="28" cy="68" r="4" fill="#f4a3a3"/>
+        <circle cx="72" cy="68" r="4" fill="#f4a3a3"/>
+      </svg>
+    </button>
+
+    <section class="chatbot__panel" id="chatbot-panel" aria-label="Chat with Pixel" hidden>
+      <header class="chatbot__header">
+        <div class="chatbot__avatar" aria-hidden="true"></div>
+        <div>
+          Pixel
+          <span class="chatbot__status">Pamela's assistant · online</span>
+        </div>
+        <button class="chatbot__close" type="button" aria-label="Close chat">✕</button>
+      </header>
+      <div class="chatbot__messages" aria-live="polite"></div>
+      <div class="chatbot__questions" aria-label="Suggested questions"></div>
+    </section>
   </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="wrap reveal">
-    <div class="tag">// skills</div>
-    <h2>My <span class="grad">toolbox</span></h2>
-    <div class="skills">
-      <div class="skill"><div class="ico">☁️</div><h3>Salesforce</h3><div class="chips"><span class="chip">Sales Cloud</span><span class="chip">Service Cloud</span><span class="chip">Experience Cloud</span><span class="chip">Apex</span><span class="chip">LWC</span><span class="chip">Flows</span></div></div>
-      <div class="skill"><div class="ico">🔗</div><h3>Integration</h3><div class="chips"><span class="chip">REST APIs</span><span class="chip">SOAP APIs</span><span class="chip">Integration flow analysis</span><span class="chip">Data Loader</span></div></div>
-      <div class="skill"><div class="ico">💻</div><h3>Development &amp; Data</h3><div class="chips"><span class="chip">Apex</span><span class="chip">Java</span><span class="chip">C</span><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">SQL</span><span class="chip">SOQL</span><span class="chip">VS Code</span></div></div>
-      <div class="skill"><div class="ico">🧭</div><h3>Business Analysis</h3><div class="chips"><span class="chip">Requirements workshops</span><span class="chip">Jira</span><span class="chip">UAT</span><span class="chip">Documentation</span><span class="chip">Demos</span><span class="chip">Go-live support</span></div></div>
-      <div class="skill"><div class="ico">⚙️</div><h3>Microsoft Power Platform</h3><div class="chips"><span class="chip">SharePoint</span><span class="chip">Power Apps</span><span class="chip">Power Automate</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" style="background:var(--bg2)">
-  <div class="wrap reveal">
-    <div class="tag">// projects</div>
-    <h2>Selected <span class="grad">work</span></h2>
-    <div class="projects">
-      <div class="proj"><span class="ind">Industrial group · Integration</span><h3>Integration Business Analysis</h3><p>Analysed integration flows between Salesforce and external systems, ran stakeholder workshops, wrote Jira tickets and validated deliveries in UAT.</p><div class="chips"><span class="chip">Integration</span><span class="chip">Jira</span><span class="chip">UAT</span></div></div>
-      <div class="proj"><span class="ind">Public sector · Experience Cloud</span><h3>Self-Service Portal</h3><p>Built custom Lightning Web Components for a customer-facing Experience Cloud portal.</p><div class="chips"><span class="chip">LWC</span><span class="chip">Apex</span><span class="chip">Experience Cloud</span></div></div>
-      <div class="proj"><span class="ind">Distribution · B2B Commerce</span><h3>B2B Ordering Portal</h3><p>Developed portal features for ordering, promotions and account management on Salesforce B2B Commerce.</p><div class="chips"><span class="chip">B2B Commerce</span><span class="chip">LWC</span></div></div>
-      <div class="proj"><span class="ind">Business data · Techno-functional</span><h3>CRM Implementation</h3><p>Gathered requirements, implemented solutions, delivered demos and documentation, and supported users through UAT.</p><div class="chips"><span class="chip">Requirements</span><span class="chip">Config</span><span class="chip">Demos</span></div></div>
-      <div class="proj"><span class="ind">Finance · Business Analysis</span><h3>Mortgage &amp; Loan Processes</h3><p>Worked as Business Analyst on mortgage and loan processes, turning business rules into clear requirements.</p><div class="chips"><span class="chip">BA</span><span class="chip">Processes</span></div></div>
-      <div class="proj"><span class="ind">Internal · Power Platform</span><h3>Process Automation</h3><p>Built SharePoint sites, Power Apps and Power Automate flows to digitise business processes.</p><div class="chips"><span class="chip">Power Apps</span><span class="chip">Power Automate</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="wrap reveal">
-    <div class="tag">// education</div>
-    <h2>Education &amp; <span class="grad">certification</span></h2>
-    <div class="edu">
-      <div class="job"><h3>Bachelor's Degree, Computer Science</h3><div class="meta">Oct 2020 – Oct 2023</div><p style="color:var(--muted)">Lebanese University, Faculty of Sciences</p></div>
-      <div class="job"><h3>Salesforce Certified Administrator</h3><div class="meta">2024</div><p style="color:var(--muted)">Salesforce</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact" style="background:var(--bg2)">
-  <div class="wrap reveal">
-    <div class="tag">// contact</div>
-    <h2>Let's <span class="grad">work together</span></h2>
-    <p>Open to roles in software development, data engineering, business analysis and CRM/IT consulting. Based in Dbayeh, Lebanon.</p>
-    <div class="btns">
-      <a href="mailto:pamelaraffoul1@gmail.com" class="btn primary">✉️ pamelaraffoul1@gmail.com</a>
-      <a href="https://www.linkedin.com/in/pamela-raffoul2002" target="_blank" class="btn ghost">in LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<footer>© <span id="yr"></span> Pamela Raffoul · Built with ☕ in Lebanon</footer>
-
-<button class="top-btn" id="topBtn" aria-label="Back to top">↑</button>
-
-<!-- BOT -->
-<div class="bot-hint" id="hint">Hi! Ask me about Pamela 👋</div>
-<button class="bot-btn" id="botBtn" aria-label="Open chat">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="botSvg">
-    <line x1="50" y1="10" x2="50" y2="24" stroke="#a78bfa" stroke-width="4"/><circle cx="50" cy="10" r="6" fill="#2dd4bf"/>
-    <rect x="18" y="24" width="64" height="54" rx="20" fill="#e8ebef"/>
-    <rect x="26" y="34" width="48" height="30" rx="12" fill="#121417"/>
-    <circle cx="40" cy="48" r="6" fill="#2dd4bf"/><circle cx="60" cy="48" r="6" fill="#2dd4bf"/>
-    <path d="M42 57q8 6 16 0" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <circle cx="28" cy="68" r="4" fill="#f4a3a3"/><circle cx="72" cy="68" r="4" fill="#f4a3a3"/>
-  </svg>
-</button>
-<div class="chat" id="chat">
-  <div class="chat-head">
-    <div class="mini" id="miniBot"></div>
-    <div>Pixel<small>Pamela's assistant · online</small></div>
-    <button id="closeChat" aria-label="Close">✕</button>
-  </div>
-  <div class="msgs" id="msgs"></div>
-  <div class="quick" id="quick"></div>
-</div>
-
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Mobile menu
-  const links = document.getElementById('links');
-  document.getElementById('burger').onclick = () => links.classList.toggle('open');
-  links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
-
-  // Back to top
-  const topBtn = document.getElementById('topBtn');
-  window.addEventListener('scroll', () => topBtn.classList.toggle('show', window.scrollY > 500));
-  topBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-
-  // Reveal on scroll
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }), {threshold: .12});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Bot
-  const answers = {
-    "👩‍💻 Who is Pamela?": "Pamela Raffoul is a computer scientist (BSc, Lebanese University) and Techno-Functional Salesforce Consultant at EI-Technologies MENA, with nearly 3 years of experience in development, integrations and business analysis. She is a Salesforce Certified Administrator and speaks Arabic, English and French.",
-    "🛠️ Her skills": "Apex, Java, C, JavaScript, HTML5, CSS3, SQL and SOQL; Lightning Web Components; Salesforce Sales, Service and Experience Cloud; REST and SOAP APIs, Data Loader, VS Code and Jira; plus Power Apps, Power Automate and SharePoint.",
-    "📁 Her experience": "She joined EI-Technologies MENA in Jan 2024 as a Junior Salesforce Consultant, building LWCs, Apex and integrations, and was promoted to Confirmed Consultant in Jan 2026, working on techno-functional consulting and integration business analysis. Scroll to the Experience section for details!",
-    "🎯 Open to work?": "Yes! Pamela is open to roles in software development, data engineering, business analysis and CRM/IT consulting. She is based in Dbayeh, Lebanon.",
-    "📬 Contact her": "You can email her at pamelaraffoul1@gmail.com or connect on LinkedIn. The buttons are in the Contact section below 👇"
-  };
-  const msgs = document.getElementById('msgs'), quick = document.getElementById('quick'), chat = document.getElementById('chat');
-  document.getElementById('miniBot').innerHTML = document.getElementById('botSvg').outerHTML;
-
-  function add(text, who) {
-    const d = document.createElement('div');
-    d.className = 'msg ' + who; d.textContent = text;
-    msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
-  }
-  Object.keys(answers).forEach(q => {
-    const b = document.createElement('button'); b.textContent = q;
-    b.onclick = () => { add(q, 'me'); setTimeout(() => add(answers[q], 'bot'), 450); };
-    quick.appendChild(b);
-  });
-  let started = false;
-  document.getElementById('botBtn').onclick = () => {
-    chat.classList.toggle('open');
-    document.getElementById('hint').style.display = 'none';
-    if (!started) { started = true; add("Hi there! 👋 I'm Pixel, Pamela's little assistant. What would you like to know?", 'bot'); }
-  };
-  document.getElementById('closeChat').onclick = () => chat.classList.remove('open');
-  setTimeout(() => { const h = document.getElementById('hint'); if (h) h.style.display = 'none'; }, 8000);
-</script>
 </body>
 </html>
