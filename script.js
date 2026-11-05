@@ -24,7 +24,7 @@ const CHATBOT_ANSWERS = {
 
   "🛠️ Her skills":
     "Apex, Java, C, JavaScript, HTML5, CSS3, SQL and SOQL; Lightning Web Components; Salesforce Sales, " +
-    "Service and Experience Cloud; REST and SOAP APIs, Data Loader, VS Code and Jira; plus Power Apps, " +
+    "Service and Experience Cloud; REST APIs, Data Loader, VS Code and Jira; plus Power Apps, " +
     "Power Automate and SharePoint.",
 
   "📁 Her experience":
