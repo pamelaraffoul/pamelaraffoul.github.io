@@ -147,12 +147,41 @@ button {
 /* 4. Shared components
    ========================================================================== */
 
-/* Small code-style label above each section title */
+/* Small uppercase label above each section title, followed by a divider line */
 .tag {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-violet);
+}
+
+.tag::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Label without a divider (used in the hero) */
+.tag--plain {
+  display: block;
   color: var(--color-teal);
+}
+
+.tag--plain::after {
+  display: none;
+}
+
+/* Centered sections get a line on both sides */
+.contact .tag::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
 }
 
 /* Gradient-filled text */
